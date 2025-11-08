@@ -30,4 +30,3 @@ else:
                     print(reegel["kõnnib"]["ei"]["hingab"]["jah"]["verejooks"]["ei"]["hingamissagedus"]["normaalne"]["pulss"]["kõrge"])
                 else:
                     print(reegel["kõnnib"]["ei"]["hingab"]["jah"]["verejooks"]["ei"]["hingamissagedus"]["normaalne"]["pulss"]["aeglane"])
-
