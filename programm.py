@@ -1,6 +1,6 @@
 import json
 
-with open("triage_rules.json", "r", encoding="utf-8") as f:
+with open("triaaži_reeglid.json", "r", encoding="utf-8") as f:
     reegel = json.load(f)
 
 # Start decision process
