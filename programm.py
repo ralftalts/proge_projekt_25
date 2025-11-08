@@ -25,9 +25,9 @@ else:
             else:
                 pulss = int(input("Mis on pulss? "))
                 if pulss == 0:
-                    print(reegel["kõnnib"]["ei"]["hingab"]["jah"]["verejooks"]["ei"]["hingamissagedus"]["normaalne"]["pulse"]["null"])
+                    print(reegel["kõnnib"]["ei"]["hingab"]["jah"]["verejooks"]["ei"]["hingamissagedus"]["normaalne"]["pulss"]["null"])
                 elif pulss > 120:
-                    print(reegel["kõnnib"]["ei"]["hingab"]["jah"]["verejooks"]["ei"]["hingamissagedus"]["normaalne"]["pulse"]["kõrge"])
+                    print(reegel["kõnnib"]["ei"]["hingab"]["jah"]["verejooks"]["ei"]["hingamissagedus"]["normaalne"]["pulss"]["kõrge"])
                 else:
-                    print(reegel["kõnnib"]["ei"]["hingab"]["jah"]["verejooks"]["ei"]["hingamissagedus"]["normaalne"]["pulse"]["aeglane"])
+                    print(reegel["kõnnib"]["ei"]["hingab"]["jah"]["verejooks"]["ei"]["hingamissagedus"]["normaalne"]["pulss"]["aeglane"])
 
