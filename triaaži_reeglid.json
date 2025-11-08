@@ -19,7 +19,7 @@
               "hingamissagedus": {
                 "aeglane": "Punane T1",
                 "kõrge": "Punane T1",
-                "tavaline": {
+                "normaalne": {
                   "pulss": {
                     "aeglane": "Kollane T2",
                     "kõrge": "Punane T1",
@@ -34,4 +34,3 @@
     }
   }
 }
-
