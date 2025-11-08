@@ -20,7 +20,7 @@
                 "aeglane": "Punane T1",
                 "kõrge": "Punane T1",
                 "tavaline": {
-                  "pulse": {
+                  "pulss": {
                     "aeglane": "Kollane T2",
                     "kõrge": "Punane T1",
                     "null": "Punane T1"
