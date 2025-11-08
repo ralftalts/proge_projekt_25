@@ -1,34 +1,34 @@
-seisund = input("Kas kannatanu kõnnib? (jah/ei): ").lower()
+import json
 
-if seisund == "jah":
-    kategooria = "ROHELINE T3"
-    print("Kategooria:", kategooria)
+with open("triage_rules.json", "r", encoding="utf-8") as f:
+    reegel = json.load(f)
+
+# Start decision process
+kõnnib = input("Kas kannatanu kõnnib? (jah/ei): ").lower()
+if kõnnib == "jah":
+    print("Kategooria:", reegel["kõnnib"]["jah"]["kategooria"])
 else:
     hingab = input("Kas kannatanu hingab? (jah/ei): ").lower()
     if hingab == "ei":
-        print("Ava hingamisteed")
-        hingab = input("Hingab nüüd? (jah/ei): ").lower()
-        if hingab == "ei":
-            print("Must, surnud")
-        else:
-            print("Püsiv külili asend")
-            print("Punane T1")
-    elif hingab == "jah":
+        print(reegel["kõnnib"]["ei"]["hingab"]["ei"]["tegevus"])
+        korda = input("Hingab nüüd? (jah/ei): ").lower()
+        print(reegel["kõnnib"]["ei"]["hingab"]["ei"]["korda"][korda])
+    else:
         verejooks = input("Massiivne verejooks jäsemest? (jah/ei): ").lower()
         if verejooks == "jah":
-            print("Žgutt")
-            print("Punane T1")
-        elif verejooks == "ei":
-            try:
-                hingamissagedus = int(input("Mis on kannatanu hingamissagedus? (täisarv): "))
-                if hingamissagedus < 10 or hingamissagedus > 30:
-                    print("Punane T1")
+            print(reegel["kõnnib"]["ei"]["hingab"]["jah"]["verejooks"]["jah"])
+        else:
+            hingamissagedus = int(input("Mis on hingamissagedus? "))
+            if hingamissagedus < 10:
+                print(reegel["kõnnib"]["ei"]["hingab"]["jah"]["verejooks"]["ei"]["hingamissagedus"]["aeglane"])
+            elif hingamissagedus > 30:
+                print(reegel["kõnnib"]["ei"]["hingab"]["jah"]["verejooks"]["ei"]["hingamissagedus"]["kõrge"])
+            else:
+                pulse = int(input("Mis on pulss? "))
+                if pulse == 0:
+                    print(reegel["kõnnib"]["ei"]["hingab"]["jah"]["verejooks"]["ei"]["hingamissagedus"]["normaalne"]["pulse"]["null"])
+                elif pulse > 120:
+                    print(reegel["kõnnib"]["ei"]["hingab"]["jah"]["verejooks"]["ei"]["hingamissagedus"]["normaalne"]["pulse"]["kõrge"])
                 else:
-                    pulss = int(input("Mis on kannatanu pulss? (täisarv): "))
-                    if pulss == 0 or pulss > 120:
-                        print("Punane T1")
-                    elif 0 < pulss <= 120:
-                        print("Kollane T2")
-            except ValueError:
-                print("Palun sisesta hingamissagedus ja pulss täisarvuna.")
+                    print(reegel["kõnnib"]["ei"]["hingab"]["jah"]["verejooks"]["ei"]["hingamissagedus"]["normaalne"]["pulse"]["aeglane"])
 
