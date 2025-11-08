@@ -3,7 +3,6 @@ import json
 with open("triaaži_reeglid.json", "r", encoding="utf-8") as f:
     reegel = json.load(f)
 
-# Start decision process
 kõnnib = input("Kas kannatanu kõnnib? (jah/ei): ").lower()
 if kõnnib == "jah":
     print("Kategooria:", reegel["kõnnib"]["jah"]["kategooria"])
