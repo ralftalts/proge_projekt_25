@@ -1,1 +1,37 @@
+{
+  "kõnnib": {
+    "jah": {
+      "kategooria": "ROHELINE T3"
+    },
+    "ei": {
+      "hingab": {
+        "ei": {
+          "tegevus": "Ava hingamisteed",
+          "korda": {
+            "ei": "Must, surnud",
+            "jah": "Punane T1"
+          }
+        },
+        "jah": {
+          "verejooks": {
+            "jah": "Punane T1",
+            "ei": {
+              "hingamissagedus": {
+                "aeglane": "Punane T1",
+                "kõrge": "Punane T1",
+                "tavaline": {
+                  "pulse": {
+                    "aeglane": "Kollane T2",
+                    "kõrge": "Punane T1",
+                    "null": "Punane T1"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
 
