@@ -8,8 +8,8 @@
         "ei": {
           "tegevus": "Ava hingamisteed",
           "korda": {
-            "ei": "Must, surnud",
-            "jah": "Punane T1"
+            "False": "Must, surnud",
+            "True": "Punane T1"
           }
         },
         "jah": {
