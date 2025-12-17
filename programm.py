@@ -2,6 +2,7 @@
 Antud programm kannab nime "Pirogovi abimees".
 Programmi autorid on Joosep Jagomägi ja Ralf Talts.
 Töö peamiseks allikaks on "Esmase triaaži teostamise kaart. Skeem: Kaitseväe meditsiiniteenistus. 2021."
+Programmi käivitamiseks peab olema allalaetud Python (mõningate operatsioonisüsteemiga on see juba eelnevalt allalaetud).
 """
 
 import json
