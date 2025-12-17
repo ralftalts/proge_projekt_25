@@ -1,16 +1,15 @@
-"""
-Antud programm kannab nime "Pirogovi abimees".
-Programmi autorid on Joosep Jagomägi ja Ralf Talts.
-Töö peamiseks allikaks on "Esmase triaaži teostamise kaart. Skeem: Kaitseväe meditsiiniteenistus. 2021."
-Programmi käivitamiseks peab olema allalaetud Python (mõningate operatsioonisüsteemiga on see juba eelnevalt allalaetud).
-"""
+
+### Antud programm kannab nime "Pirogovi abimees".
+### Programmi autorid on Joosep Jagomägi ja Ralf Talts.
+### Töö peamiseks allikaks on "Esmase triaaži teostamise kaart. Skeem: Kaitseväe meditsiiniteenistus. 2021."
+### Programmi käivitamiseks peab olema allalaetud Python (mõningate operatsioonisüsteemiga on see juba eelnevalt allalaetud).
 
 import json
 from tkinter import *
 from tkinter import ttk
 from tkinter import messagebox
 
-with open("triaaži_reeglid.json", "r", encoding="utf-8") as f: #loeb tiraazi reeglid sisse
+with open("triaaži_reeglid.json", "r", encoding="utf-8") as f: #loeb triaaži reeglid sisse
     reegel = json.load(f)
 
 def seadista_aken(aken, laius=400, kõrgus=200): #teeb 400*200 akna ekraani keskele
@@ -70,7 +69,6 @@ def teade(root, tekst): #teeb akna, mis kuvab diagnoosi
     root.wait_window(aken)
 
 def number(root, küsimus): #teeb antud küsimusega akna ja tagastab sisestatud numbri
-    """Küsib numbrit"""
     vastus = {"võti": None}
     
     aken = seadista_hüpik(root)
@@ -106,7 +104,6 @@ def number(root, küsimus): #teeb antud küsimusega akna ja tagastab sisestatud 
     return vastus["võti"]
 
 def nime_küsimine(root, küsimus): 
-    """Küsib nimi"""
     vastus = {"võti": None}
     
     aken = seadista_hüpik(root)
@@ -206,7 +203,7 @@ def loo_tabel():
     tabel.tag_configure("Roheline T3", background="#24f228")
     tabel.tag_configure("Kollane T2", background="#f2ef24")
     tabel.tag_configure("Punane T1", background="#e81410")
-    tabel.tag_configure("Must, surnud", background="black", foreground="white") # Black
+    tabel.tag_configure("Must, surnud", background="black", foreground="white") 
     
     def lisa_uus_kannatanu():
         nimi = nime_küsimine(root, "Sisesta kannatanu nimi/ID")
