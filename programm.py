@@ -18,6 +18,7 @@ def seadista_hüpik(root):
     hüpik.title("Tiraaž")
     hüpik.transient(root)
     hüpik.grab_set()
+    hüpik.protocol("WM_DELETE_WINDOW", lambda: None)
     return hüpik
 
 def jah_ei(root, küsimus): #teeb antud küsimusega jah/ei vastuse variantidega akna ja tagastab True/False
@@ -222,6 +223,11 @@ def loo_tabel():
         tabel.item(item_id, values=(nimi, uus_kategooria), tags=(uus_kategooria,))
         tabel.selection_remove(item_id)
         
+    def sulgemine():
+        if messagebox.askokcancel("Välju", "Kas soovid programmi sulgeda? Kõik sisestatud andmed kaovad."):
+            root.destroy()
+            root.quit()
+        
     nupud = Frame(root)
     nupud.pack(pady=10)
     
@@ -232,7 +238,8 @@ def loo_tabel():
     Button(nupud, text="Hinda uuesti",
             font=("Arial", 11, "bold"), padx= 15, pady= 5,
             command= hinda_uuesti).pack(side=LEFT, padx= 10)
-
+    root.protocol("WM_DELETE_WINDOW", sulgemine)
+    
     root.mainloop()
     
     
