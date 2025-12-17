@@ -19,7 +19,7 @@ def seadista_aken(aken, laius=400, kõrgus=200): #teeb 400*200 akna ekraani kesk
     y = (ekraani_kõrgus - kõrgus) // 2
     aken.geometry(f"{laius}x{kõrgus}+{x}+{y}")
 
-def seadista_hüpik(root):
+def seadista_hüpik(root): #teeb hüpikakna
     hüpik = Toplevel(root)
     hüpik.title("Tiraaž")
     hüpik.transient(root)
@@ -190,16 +190,18 @@ def kontrolli_pulss(root, pulss_reeglid): # Küsib pulssi ja annab tulemuse
     else:
         return pulss_reeglid["aeglane"]
     
-def loo_tabel():
+def loo_tabel(): #Teeb tabeli, mis on koguaeg avatud ja kust saab lisada/muuta kannatanuid
+    #aken
     root = Tk()
     root.title("Kannatanud")
     seadista_aken(root, 400, 600)
-    
+    #akna sisu
     tabel = ttk.Treeview(root, columns= ("nimi", "kategooria"), show="headings")
     tabel.heading("nimi", text= "Nimi/ID")
     tabel.heading("kategooria", text= "Kategooria")
     tabel.pack(padx=10, pady=10, fill=BOTH, expand=True)
-    
+
+    #värvid
     tabel.tag_configure("Roheline T3", background="#24f228")
     tabel.tag_configure("Kollane T2", background="#f2ef24")
     tabel.tag_configure("Punane T1", background="#e81410")
