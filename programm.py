@@ -1,3 +1,9 @@
+"""
+Antud programm kannab nime "Pirogovi abimees".
+Programmi autorid on Joosep Jagomägi ja Ralf Talts.
+Töö peamiseks allikaks on "Esmase triaaži teostamise kaart. Skeem: Kaitseväe meditsiiniteenistus. 2021."
+"""
+
 import json
 from tkinter import *
 from tkinter import ttk
